@@ -12,6 +12,8 @@ import {
   SlSocialYoutube,
 } from "react-icons/sl";
 
+import LocaleSwitcher from "./LocaleSwitcher";
+
 const Navbar = () => {
   // HOOKS
   const [showMenu, setShowMenu] = useState(false);
@@ -57,7 +59,7 @@ const Navbar = () => {
             alt="logo"
           />
         </Motion.div>
-        <div className="hidden mdl:inline-flex items-center gap-7">
+        <div className="hidden mdl:flex items-center gap-7">
           <ul className="flex text-[13px] gap-7">
             <Link
               href="#home"
@@ -125,16 +127,19 @@ const Navbar = () => {
               </Motion.li>
             </Link>
           </ul>
-          <a href="/assets/resume.png" target="_blank">
-            <Motion.button
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              className="ml-4 px-4 py-2 border border-textGreen text-textGreen text-sm rounded-md hover:bg-hoverColor transition duration-300"
-            >
-              Resume
-            </Motion.button>
-          </a>
+          <div className="flex items-center gap-4">
+            <a href="/assets/resume.png" target="_blank">
+              <Motion.button
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="px-4 py-2 border border-textGreen text-textGreen text-sm rounded-md hover:bg-hoverColor transition duration-300"
+              >
+                Resume
+              </Motion.button>
+            </a>
+            <LocaleSwitcher />
+          </div>
         </div>
         {/* Small Icon Section */}
         <div
@@ -241,6 +246,8 @@ const Navbar = () => {
                     Resume
                   </Motion.button>
                 </a>
+                {/*  Language Switcher for mobile */}
+                <LocaleSwitcher />
                 {/* contacts Icons in Mobile Navbar */}
                 <div className="flex gap-4">
                   <Motion.a

@@ -1,3 +1,6 @@
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { GetStaticProps } from "next";
+
 import Navbar from "@/components/Navbar";
 import Head from "next/head";
 import LeftSide from "@/components/LeftSide";
@@ -56,3 +59,11 @@ export default function Home() {
     </div>
   );
 }
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? "en", ["common"])),
+    },
+  };
+};
