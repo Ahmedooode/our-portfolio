@@ -13,11 +13,14 @@ import {
 } from "react-icons/sl";
 
 import LocaleSwitcher from "./LocaleSwitcher";
+import { useTranslation } from "next-i18next";
 
 const Navbar = () => {
   // HOOKS
   const [showMenu, setShowMenu] = useState(false);
   const ref = useRef<string | any>("");
+
+  const { t, i18n } = useTranslation("common");
 
   // EVENT HANDLERS
 
@@ -46,12 +49,16 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full shadow-navbarShadow h-20 lg:h-[12vh] sticky top-0 z-50 bg-bodyColor px-4">
-      <div className="max-w-container h-full mx-auto py-1 font-titleFont flex items-center justify-between">
+    <div
+      dir="ltr"
+      className="w-full shadow-navbarShadow h-20 lg:h-[12vh] sticky top-0 z-50 bg-bodyColor px-4"
+    >
+      <div className="max-w-container h-full mx-auto py-1 font-titleFont grid grid-cols-3 items-center">
         <Motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
+          className="flex items-center"
         >
           <Image
             className="w-14 border border-green-900 rounded-full "
@@ -59,257 +66,308 @@ const Navbar = () => {
             alt="logo"
           />
         </Motion.div>
-        <div className="hidden mdl:flex items-center gap-7">
-          <ul className="flex text-[13px] gap-7">
-            <Link
-              href="#home"
-              className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
-              onClick={handleScroll}
-            >
-              <Motion.li
-                initial={{ y: -10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.1 }}
-              >
-                Home
-              </Motion.li>
-            </Link>
-            <Link
-              href="#about"
-              className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
-              onClick={handleScroll}
-            >
-              <Motion.li
-                initial={{ y: -10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.1 }}
-              >
-                <span>01.</span>about
-              </Motion.li>
-            </Link>
-            <Link
-              href="#experience"
-              className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
-              onClick={handleScroll}
-            >
-              <Motion.li
-                initial={{ y: -10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.1 }}
-              >
-                <span>02.</span>Experience
-              </Motion.li>
-            </Link>
-            <Link
-              href="#projects"
-              className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
-              onClick={handleScroll}
-            >
-              <Motion.li
-                initial={{ y: -10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.1 }}
-              >
-                <span>03.</span>Projects
-              </Motion.li>
-            </Link>
-            <Link
-              href="#contact"
-              className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
-              onClick={handleScroll}
-            >
-              <Motion.li
-                initial={{ y: -10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.1 }}
-              >
-                <span>04.</span>Contact
-              </Motion.li>
-            </Link>
-          </ul>
-          <div className="flex items-center gap-4">
-            <a href="/assets/resume.png" target="_blank">
-              <Motion.button
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
-                className="px-4 py-2 border border-textGreen text-textGreen text-sm rounded-md hover:bg-hoverColor transition duration-300"
-              >
-                Resume
-              </Motion.button>
-            </a>
-            <LocaleSwitcher />
-          </div>
-        </div>
-        {/* Small Icon Section */}
-        <div
-          onClick={() => setShowMenu(true)}
-          className="w-6 h-5 flex flex-col justify-between items-center mdl:hidden text-4xl text-textGreen cursor-pointer overflow-hidden group"
-        >
-          <span className="w-full h-[2px] bg-textGreen inline-flex transform group-hover:translate-x-2 transition-all ease-in-out duration-300"></span>
-          <span className="w-full h-[2px] bg-textGreen inline-flex transform translate-x-3 group-hover:translate-x-0 transition-all ease-in-out duration-300"></span>
-          <span className="w-full h-[2px] bg-textGreen inline-flex transform translate-x-1 group-hover:translate-x-3 transition-all ease-in-out duration-300"></span>
-        </div>
-        {/* Mobile Navbar */}
-        {showMenu && (
-          <div
-            ref={(node) => (ref.current = node)}
-            onClick={handleClick}
-            className="absolute mdl:hidden top-0 right-0 w-full h-screen bg-black bg-opacity-50 flex flex-col items-end"
-          >
-            <Motion.div
-              initial={{ x: 20, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.1 }}
-              className="w-[80%] h-full overflow-y-scroll scrollbarHide bg-[#112240] flex flex-col items-center px-4 py-10 relative"
-            >
-              <MdOutlineClose
-                onClick={() => setShowMenu(false)}
-                className="text-3xl text-textGreen cursor-pointer hover:text-red-500 absolute top-4 right-4"
-              />
-              <div className="flex flex-col items-center gap-7">
-                {" "}
-                <ul className="flex flex-col text-base gap-7">
-                  <Link
-                    href="#home"
-                    className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
-                    onClick={handleScroll}
-                  >
-                    <Motion.li
-                      initial={{ y: 20, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ duration: 0.1, delay: 0.1, ease: "easeIn" }}
-                    >
-                      Home
-                    </Motion.li>
-                  </Link>
-                  <Link
-                    href="#about"
-                    className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
-                    onClick={handleScroll}
-                  >
-                    <Motion.li
-                      initial={{ y: -10, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ duration: 0.2, delay: 0.3, ease: "easeIn" }}
-                    >
-                      <span>01.</span>about
-                    </Motion.li>
-                  </Link>
-                  <Link
-                    href="#experience"
-                    className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
-                    onClick={handleScroll}
-                  >
-                    <Motion.li
-                      initial={{ y: -10, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ duration: 0.3, delay: 0.4, ease: "easeIn" }}
-                    >
-                      <span>02.</span>Experience
-                    </Motion.li>
-                  </Link>
-                  <Link
-                    href="#projects"
-                    className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
-                    onClick={handleScroll}
-                  >
-                    <Motion.li
-                      initial={{ y: -10, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ duration: 0.4, delay: 0.5, ease: "easeIn" }}
-                    >
-                      <span>03.</span>Projects
-                    </Motion.li>
-                  </Link>
-                  <Link
-                    href="#contact"
-                    className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
-                    onClick={handleScroll}
-                  >
-                    <Motion.li
-                      initial={{ y: -10, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ duration: 0.5, delay: 0.6, ease: "easeIn" }}
-                    >
-                      <span>04.</span>Contact
-                    </Motion.li>
-                  </Link>
-                </ul>
-                <a href="/assets/resume.png" target="_blank">
-                  <Motion.button
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.6, ease: "easeIn" }}
-                    className="w-32 h-10 border border-textGreen text-textGreen text-[13px] rounded-md hover:bg-hoverColor duration-300"
-                  >
-                    Resume
-                  </Motion.button>
-                </a>
-                {/*  Language Switcher for mobile */}
-                <LocaleSwitcher />
-                {/* contacts Icons in Mobile Navbar */}
-                <div className="flex gap-4">
-                  <Motion.a
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.7, ease: "easeIn" }}
-                    href="https://github.com/Ahmedooode"
-                    target="_blank"
-                  >
-                    <span className="w-10 h-10 text-xl bg-hoverColor rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
-                      <TbBrandGithub />
-                    </span>
-                  </Motion.a>
 
-                  <Motion.a
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.8, ease: "easeIn" }}
-                    href="https://www.linkedin.com/in/Ahmedooode"
-                    target="_blank"
-                  >
-                    <span className="w-10 h-10 text-xl bg-hoverColor rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
-                      <SlSocialLinkedin />
-                    </span>
-                  </Motion.a>
-                  <Motion.a
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.9, ease: "easeIn" }}
-                    href="https://www.youtube.com/c/Ahmedooode"
-                    target="_blank"
-                  >
-                    <span className="w-10 h-10 text-xl bg-hoverColor rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
-                      <SlSocialYoutube />
-                    </span>
-                  </Motion.a>
-                  <Motion.a
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 1, ease: "easeIn" }}
-                    href="https://www.facebook.com/Ahmedooode"
-                    target="_blank"
-                  >
-                    <span className="w-10 h-10 text-xl bg-hoverColor rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
-                      <SlSocialFacebook />
-                    </span>
-                  </Motion.a>
-                </div>
-              </div>
-              <Motion.a
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.2, ease: "easeIn" }}
-                className="text-sm w-72 tracking-widest text-textGreen text-center mt-4"
-                href="mailto:ahmedemail@gmail.com"
-              >
-                <p>email.me@gmail.com</p>
-              </Motion.a>
-            </Motion.div>
-          </div>
-        )}
+        <ul
+          className={`hidden mdl:flex items-center justify-center text-[13px] gap-8 md:mr-16 ${
+            i18n.language === "ar" ? "flex-row-reverse" : ""
+          }`}
+        >
+          <Link
+            href="#home"
+            className="flex items-center m-2 gap-1 text-base md:text-lg font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link "
+            onClick={handleScroll}
+          >
+            <Motion.li
+              initial={{ y: -10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.1 }}
+            >
+              {t("nav.home")}
+            </Motion.li>
+          </Link>
+          <Link
+            href="#about"
+            className="flex items-center gap-1  m-2 text-base md:text-lg font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
+            onClick={handleScroll}
+          >
+            <Motion.li
+              initial={{ y: -10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.1 }}
+              className="flex items-center"
+            >
+              {i18n.language === "ar" ? (
+                <>
+                  {t("nav.about")}
+                  <span className="ml-2">.01</span>
+                </>
+              ) : (
+                <>
+                  <span className="mr-2">01.</span>
+                  {t("nav.about")}
+                </>
+              )}
+            </Motion.li>
+          </Link>
+          <Link
+            href="#experience"
+            className="flex items-center gap-1  m-2 text-base md:text-lg font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
+            onClick={handleScroll}
+          >
+            <Motion.li
+              initial={{ y: -10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.1 }}
+              className="flex items-center"
+            >
+              {i18n.language === "ar" ? (
+                <>
+                  {t("nav.experience")}
+                  <span className="ml-2">.02</span>
+                </>
+              ) : (
+                <>
+                  <span className="mr-2">02.</span>
+                  {t("nav.experience")}
+                </>
+              )}
+            </Motion.li>
+          </Link>
+          <Link
+            href="#projects"
+            className="flex items-center gap-1 m-2 text-base md:text-lg font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
+            onClick={handleScroll}
+          >
+            <Motion.li
+              initial={{ y: -10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.1 }}
+              className="flex items-center"
+            >
+              {i18n.language === "ar" ? (
+                <>
+                  {t("nav.projects")}
+                  <span className="ml-2">.03</span>
+                </>
+              ) : (
+                <>
+                  <span className="mr-2">03.</span>
+                  {t("nav.projects")}
+                </>
+              )}
+            </Motion.li>
+          </Link>
+          <Link
+            href="#contact"
+            className="flex items-center gap-1 m-2 text-base md:text-lg font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
+            onClick={handleScroll}
+          >
+            <Motion.li
+              initial={{ y: -10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.1 }}
+              className="flex items-center"
+            >
+              {i18n.language === "ar" ? (
+                <>
+                  {t("nav.contact")}
+                  <span className="ml-2">.04</span>
+                </>
+              ) : (
+                <>
+                  <span className="mr-2">04.</span>
+                  {t("nav.contact")}
+                </>
+              )}
+            </Motion.li>
+          </Link>
+        </ul>
+
+        {/* Right: Resume + LocaleSwitcher */}
+        <div className="hidden mdl:flex items-center justify-end gap-4">
+          <a href="/assets/resume.png" target="_blank">
+            <Motion.button
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="px-4 py-2 border border-textGreen text-textGreen text-sm rounded-md hover:bg-hoverColor transition duration-300"
+            >
+              {t("nav.resume")}
+            </Motion.button>
+          </a>
+          <LocaleSwitcher />
+        </div>
       </div>
+      {/* Small Icon Section */}
+      <div
+        onClick={() => setShowMenu(true)}
+        className="w-6 h-5 flex flex-col justify-between items-center mdl:hidden text-4xl text-textGreen cursor-pointer overflow-hidden group"
+      >
+        <span className="w-full h-[2px] bg-textGreen inline-flex transform group-hover:translate-x-2 transition-all ease-in-out duration-300"></span>
+        <span className="w-full h-[2px] bg-textGreen inline-flex transform translate-x-3 group-hover:translate-x-0 transition-all ease-in-out duration-300"></span>
+        <span className="w-full h-[2px] bg-textGreen inline-flex transform translate-x-1 group-hover:translate-x-3 transition-all ease-in-out duration-300"></span>
+      </div>
+      {/* Mobile Navbar */}
+      {showMenu && (
+        <div
+          ref={(node) => (ref.current = node)}
+          onClick={handleClick}
+          className="absolute mdl:hidden top-0 right-0 w-full h-screen bg-black bg-opacity-50 flex flex-col items-end"
+        >
+          <Motion.div
+            initial={{ x: 20, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.1 }}
+            className="w-[80%] h-full overflow-y-scroll scrollbarHide bg-[#112240] flex flex-col items-center px-4 py-10 relative"
+          >
+            <MdOutlineClose
+              onClick={() => setShowMenu(false)}
+              className="text-3xl text-textGreen cursor-pointer hover:text-red-500 absolute top-4 right-4"
+            />
+            <div className="flex flex-col items-center gap-7">
+              {" "}
+              <ul className="flex flex-col text-base gap-7">
+                <Link
+                  href="#home"
+                  className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
+                  onClick={handleScroll}
+                >
+                  <Motion.li
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.1, delay: 0.1, ease: "easeIn" }}
+                  >
+                    {t("nav.home")}
+                  </Motion.li>
+                </Link>
+                <Link
+                  href="#about"
+                  className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
+                  onClick={handleScroll}
+                >
+                  <Motion.li
+                    initial={{ y: -10, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.2, delay: 0.3, ease: "easeIn" }}
+                  >
+                    <span>01.</span>
+                    {t("nav.about")}
+                  </Motion.li>
+                </Link>
+                <Link
+                  href="#experience"
+                  className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
+                  onClick={handleScroll}
+                >
+                  <Motion.li
+                    initial={{ y: -10, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.3, delay: 0.4, ease: "easeIn" }}
+                  >
+                    <span>02.</span>
+                    {t("nav.experience")}
+                  </Motion.li>
+                </Link>
+                <Link
+                  href="#projects"
+                  className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
+                  onClick={handleScroll}
+                >
+                  <Motion.li
+                    initial={{ y: -10, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.4, delay: 0.5, ease: "easeIn" }}
+                  >
+                    <span>03.</span> {t("nav.projects")}
+                  </Motion.li>
+                </Link>
+                <Link
+                  href="#contact"
+                  className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
+                  onClick={handleScroll}
+                >
+                  <Motion.li
+                    initial={{ y: -10, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.6, ease: "easeIn" }}
+                  >
+                    <span>04.</span> {t("nav.contact")}
+                  </Motion.li>
+                </Link>
+              </ul>
+              <a href="/assets/resume.png" target="_blank">
+                <Motion.button
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.6, ease: "easeIn" }}
+                  className="w-32 h-10 border border-textGreen text-textGreen text-[13px] rounded-md hover:bg-hoverColor duration-300"
+                >
+                  {t("nav.resume")}
+                </Motion.button>
+              </a>
+              {/*  Language Switcher for mobile */}
+              <LocaleSwitcher />
+              {/* contacts Icons in Mobile Navbar */}
+              <div className="flex gap-4">
+                <Motion.a
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.7, ease: "easeIn" }}
+                  href="https://github.com/Ahmedooode"
+                  target="_blank"
+                >
+                  <span className="w-10 h-10 text-xl bg-hoverColor rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
+                    <TbBrandGithub />
+                  </span>
+                </Motion.a>
+
+                <Motion.a
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.8, ease: "easeIn" }}
+                  href="https://www.linkedin.com/in/Ahmedooode"
+                  target="_blank"
+                >
+                  <span className="w-10 h-10 text-xl bg-hoverColor rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
+                    <SlSocialLinkedin />
+                  </span>
+                </Motion.a>
+                <Motion.a
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.9, ease: "easeIn" }}
+                  href="https://www.youtube.com/c/Ahmedooode"
+                  target="_blank"
+                >
+                  <span className="w-10 h-10 text-xl bg-hoverColor rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
+                    <SlSocialYoutube />
+                  </span>
+                </Motion.a>
+                <Motion.a
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 1, ease: "easeIn" }}
+                  href="https://www.facebook.com/Ahmedooode"
+                  target="_blank"
+                >
+                  <span className="w-10 h-10 text-xl bg-hoverColor rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
+                    <SlSocialFacebook />
+                  </span>
+                </Motion.a>
+              </div>
+            </div>
+            <Motion.a
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2, ease: "easeIn" }}
+              className="text-sm w-72 tracking-widest text-textGreen text-center mt-4"
+              href="mailto:ahmedemail@gmail.com"
+            >
+              <p>{t("nav.email")}</p>
+            </Motion.a>
+          </Motion.div>
+        </div>
+      )}
     </div>
   );
 };

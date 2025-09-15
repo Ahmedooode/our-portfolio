@@ -6,5 +6,15 @@
     "description": "We are a team of passionate designers and developers dedicated to crafting exceptional digital experiences. Our portfolio showcases our expertise in web design, development, and user experience.",
     "learnMore": "Learn More",
     "cta": "Check out our Projects"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "resume": "Resume",
+    "menuClose": "Close",
+    "email": "email.me@gmail.com"
   }
 }
