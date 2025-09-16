@@ -5,6 +5,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
+  safelist: ["font-arabicFont", "font-bodyFont", "font-titleFont"],
   theme: {
     extend: {
       maxWidth: {
@@ -26,7 +27,7 @@ module.exports = {
       fontFamily: {
         bodyFont: ["Montserrat", "sans-serif"],
         titleFont: ["Inter", "sans-serif"],
-        arabicFont: ["Tajawal", "sans-serif"],
+        arabicFont: ["Mada", "sans-serif"],
       },
       boxShadow: {
         navbarShadow: "0 10px 30px -10px rgba(2, 12, 27, 0.75)",

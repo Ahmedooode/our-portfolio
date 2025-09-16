@@ -4,6 +4,9 @@ import { useTranslation } from "next-i18next";
 const Banner = () => {
   const { t } = useTranslation("common");
 
+  const { i18n } = useTranslation();
+  const isArabic = i18n.language === "ar";
+
   return (
     <section
       id="home"
@@ -13,7 +16,9 @@ const Banner = () => {
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.6 }}
-        className="text-lg font-titleFont tracking-wide text-textGreen"
+        className={`text-lg tracking-wide text-textGreen ${
+          isArabic ? "font-arabicFont" : "font-titleFont"
+        }`}
       >
         {t("banner.subtitle")}
       </Motion.h3>
@@ -22,7 +27,9 @@ const Banner = () => {
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.7 }}
-        className="text-4xl lgl:text-6xl font-titleFont font-semibold flex flex-col"
+        className={`text-4xl lgl:text-6xl font-semibold flex flex-col ${
+          isArabic ? "font-arabicFont" : "font-titleFont"
+        }`}
       >
         {t("banner.title")}{" "}
         <span className="text-textDark mt-2 lgl:mt-4">
@@ -49,7 +56,9 @@ const Banner = () => {
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.9 }}
-        className="w-52 h-14 text-sm font-titleFont border border-textGreen rounded-md text-textGreen tracking-wide hover:bg-hoverColor duration-300"
+        className={`w-52 h-14 text-sm border border-textGreen rounded-md text-textGreen tracking-wide hover:bg-hoverColor duration-300 ${
+          isArabic ? "font-arabicFont" : "font-titleFont"
+        }`}
       >
         {t("banner.cta")}
       </Motion.button>

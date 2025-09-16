@@ -22,6 +22,8 @@ const Navbar = () => {
 
   const { t, i18n } = useTranslation("common");
 
+  const isArabic = i18n.language === "ar";
+
   // EVENT HANDLERS
 
   function handleClick(e: any) {
@@ -53,7 +55,11 @@ const Navbar = () => {
       dir="ltr"
       className="w-full shadow-navbarShadow h-20 lg:h-[12vh] sticky top-0 z-50 bg-bodyColor px-4"
     >
-      <div className="max-w-container h-full mx-auto py-1 font-titleFont grid grid-cols-3 items-center">
+      <div
+        className={`max-w-container h-full mx-auto py-1 grid grid-cols-3 items-center ${
+          isArabic ? "font-arabicFont" : "font-titleFont"
+        }`}
+      >
         <Motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -97,10 +103,7 @@ const Navbar = () => {
               className="flex items-center"
             >
               {i18n.language === "ar" ? (
-                <>
-                  {t("nav.about")}
-                  <span className="ml-2">.01</span>
-                </>
+                <>{t("nav.about")}</>
               ) : (
                 <>
                   <span className="mr-2">01.</span>
@@ -121,10 +124,7 @@ const Navbar = () => {
               className="flex items-center"
             >
               {i18n.language === "ar" ? (
-                <>
-                  {t("nav.experience")}
-                  <span className="ml-2">.02</span>
-                </>
+                <>{t("nav.experience")}</>
               ) : (
                 <>
                   <span className="mr-2">02.</span>
@@ -145,10 +145,7 @@ const Navbar = () => {
               className="flex items-center"
             >
               {i18n.language === "ar" ? (
-                <>
-                  {t("nav.projects")}
-                  <span className="ml-2">.03</span>
-                </>
+                <>{t("nav.projects")}</>
               ) : (
                 <>
                   <span className="mr-2">03.</span>
@@ -169,10 +166,7 @@ const Navbar = () => {
               className="flex items-center"
             >
               {i18n.language === "ar" ? (
-                <>
-                  {t("nav.contact")}
-                  <span className="ml-2">.04</span>
-                </>
+                <>{t("nav.contact")}</>
               ) : (
                 <>
                   <span className="mr-2">04.</span>
@@ -201,7 +195,7 @@ const Navbar = () => {
       {/* Small Icon Section */}
       <div
         onClick={() => setShowMenu(true)}
-        className="w-6 h-5 flex flex-col justify-between items-center mdl:hidden text-4xl text-textGreen cursor-pointer overflow-hidden group"
+        className="absolute right-4 top-6 mdl:hidden w-8 h-6 flex flex-col justify-between items-center text-3xl text-textGreen cursor-pointer overflow-hidden group"
       >
         <span className="w-full h-[2px] bg-textGreen inline-flex transform group-hover:translate-x-2 transition-all ease-in-out duration-300"></span>
         <span className="w-full h-[2px] bg-textGreen inline-flex transform translate-x-3 group-hover:translate-x-0 transition-all ease-in-out duration-300"></span>
@@ -237,7 +231,11 @@ const Navbar = () => {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.1, delay: 0.1, ease: "easeIn" }}
                   >
-                    {t("nav.home")}
+                    {i18n.language === "ar" ? (
+                      <>{t("nav.home")}</>
+                    ) : (
+                      <>{t("nav.home")}</>
+                    )}
                   </Motion.li>
                 </Link>
                 <Link
@@ -250,8 +248,14 @@ const Navbar = () => {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.2, delay: 0.3, ease: "easeIn" }}
                   >
-                    <span>01.</span>
-                    {t("nav.about")}
+                    {i18n.language === "ar" ? (
+                      <>{t("nav.about")}</>
+                    ) : (
+                      <>
+                        <span className="mr-2">01.</span>
+                        {t("nav.about")}
+                      </>
+                    )}
                   </Motion.li>
                 </Link>
                 <Link
@@ -264,8 +268,14 @@ const Navbar = () => {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.3, delay: 0.4, ease: "easeIn" }}
                   >
-                    <span>02.</span>
-                    {t("nav.experience")}
+                    {i18n.language === "ar" ? (
+                      <>{t("nav.experience")}</>
+                    ) : (
+                      <>
+                        <span className="mr-2">02.</span>
+                        {t("nav.experience")}
+                      </>
+                    )}
                   </Motion.li>
                 </Link>
                 <Link
@@ -278,7 +288,14 @@ const Navbar = () => {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.4, delay: 0.5, ease: "easeIn" }}
                   >
-                    <span>03.</span> {t("nav.projects")}
+                    {i18n.language === "ar" ? (
+                      <>{t("nav.projects")}</>
+                    ) : (
+                      <>
+                        <span className="mr-2">03.</span>
+                        {t("nav.projects")}
+                      </>
+                    )}
                   </Motion.li>
                 </Link>
                 <Link
@@ -291,7 +308,14 @@ const Navbar = () => {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.6, ease: "easeIn" }}
                   >
-                    <span>04.</span> {t("nav.contact")}
+                    {i18n.language === "ar" ? (
+                      <>{t("nav.contact")}</>
+                    ) : (
+                      <>
+                        <span className="mr-2">04.</span>
+                        {t("nav.contact")}
+                      </>
+                    )}
                   </Motion.li>
                 </Link>
               </ul>
