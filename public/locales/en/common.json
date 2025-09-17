@@ -16,5 +16,12 @@
     "resume": "Resume",
     "menuClose": "Close",
     "email": "email.me@gmail.com"
+  },
+  "about": {
+    "sectionTitle": "About Us",
+    "paragraph1": "Welcome in our creative space! We are passionate designers and developers dedicated to crafting unique digital experiences. Our team combines innovation, expertise, and attention to detail to help bring your ideas to life.",
+    "paragraph2.part1": "Whether you're a startup, a huge corporation, or an individual with a vision, we are here to collaborate and deliver solutions tailored to your needs.",
+    "spanText": "Let's build something amazing together!",
+    "paragraph3": "Here are a few technologies we have been working with recently:"
   }
 }

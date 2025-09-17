@@ -2,31 +2,35 @@ import { profileImg } from "@/public/assets";
 import SectionTitle from "./SectionTitle";
 import { AiFillThunderbolt } from "react-icons/ai";
 import Image from "next/image";
+import { useTranslation } from "next-i18next";
 
 const About = () => {
+  // language HOOKS :
+  const { t } = useTranslation("common");
+
+  const { i18n } = useTranslation();
+  const isArabic = i18n.language === "ar";
+
   return (
     <section
       id="about"
-      className="max-w-containerSmall mx-auto py-10 lgl:py-32 flex flex-col gap-8"
+      className={`max-w-containerSmall mx-auto py-10 lgl:py-32 flex flex-col gap-8 ${
+        isArabic ? "font-arabicFont" : ""
+      }`}
     >
-      <SectionTitle title="About Us" titleNo="01" />
+      <div className="">
+        <SectionTitle title={t("about.sectionTitle")} titleNo="01" />
+      </div>
       <div className="flex flex-col lgl:flex-row gap-16">
         <div className="w-full lgl:w-2/3 text-base text-textDark font-medium flex flex-col gap-4">
+          <p>{t("about.paragraph1")}</p>
           <p>
-            Welcome in our creative space! We are passionate designers and
-            developers dedicated to crafting unique digital experiences. Our
-            team combines innovation, expertise, and attention to detail to help
-            bring your ideas to life.
+            {t("about.paragraph2.part1")}{" "}
+            <span className="text-textGreen">{t("about.spanText")}</span>
           </p>
-          <p>
-            Whether you're a startup, a huge corporation, or an individual with
-            a vision, we are here to collaborate and deliver solutions tailored
-            to your needs.
-            <span className="text-textGreen">
-              Let's build something amazing together!
-            </span>
-          </p>
-          <p>Here are a few technologies we have been working with recently:</p>
+
+          <p>{t("about.paragraph3")}</p>
+
           <ul className="max-w-[450px] text-sm font-titleFont grid grid-cols-2 gap-2 mt-6">
             <li className="flex items-center gap-2">
               <span className="text-textGreen">
