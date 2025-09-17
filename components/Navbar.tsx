@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
-import { motion as Motion } from "framer-motion";
+import { motion as Motion, AnimatePresence } from "framer-motion";
 import { MdOutlineClose } from "react-icons/md";
 import { TbBrandGithub } from "react-icons/tb";
 import {
@@ -195,24 +195,28 @@ const Navbar = () => {
       {/* Small Icon Section */}
       <div
         onClick={() => setShowMenu(true)}
-        className="absolute right-4 top-6 mdl:hidden w-8 h-6 flex flex-col justify-between items-center text-3xl text-textGreen cursor-pointer overflow-hidden group"
+        className="absolute right-4 top-6 w-6 h-5 flex flex-col justify-between items-center mdl:hidden text-4xl text-textGreen cursor-pointer overflow-hidden group"
       >
-        <span className="w-full h-[2px] bg-textGreen inline-flex transform group-hover:translate-x-2 transition-all ease-in-out duration-300"></span>
+        {/* <span className="w-full h-[2px] bg-textGreen inline-flex transform group-hover:translate-x-2 transition-all ease-in-out duration-300"></span>
         <span className="w-full h-[2px] bg-textGreen inline-flex transform translate-x-3 group-hover:translate-x-0 transition-all ease-in-out duration-300"></span>
-        <span className="w-full h-[2px] bg-textGreen inline-flex transform translate-x-1 group-hover:translate-x-3 transition-all ease-in-out duration-300"></span>
+        <span className="w-full h-[2px] bg-textGreen inline-flex transform translate-x-1 group-hover:translate-x-3 transition-all ease-in-out duration-300"></span> */}
+
+        <span className="w-full h-[2px] bg-textGreen inline-flex transition-all duration-300 ease-in-out group-hover:translate-x-2"></span>
+        <span className="w-full h-[2px] bg-textGreen inline-flex transition-all duration-300 ease-in-out translate-x-3 group-hover:translate-x-0"></span>
+        <span className="w-full h-[2px] bg-textGreen inline-flex transition-all duration-300 ease-in-out translate-x-1 group-hover:translate-x-3"></span>
       </div>
       {/* Mobile Navbar */}
       {showMenu && (
         <div
           ref={(node) => (ref.current = node)}
           onClick={handleClick}
-          className="absolute mdl:hidden top-0 right-0 w-full h-screen bg-black bg-opacity-50 flex flex-col items-end"
+          className="absolute mdl:hidden top-0 right-0 w-full h-screen bg-black bg-opacity-50 flex flex-col items-end z-[60]"
         >
           <Motion.div
             initial={{ x: 20, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.1 }}
-            className="w-[80%] h-full overflow-y-scroll scrollbarHide bg-[#112240] flex flex-col items-center px-4 py-10 relative"
+            className="w-[80%] h-full overflow-y-scroll scrollbarHide bg-[#112240] flex flex-col items-center px-4 py-10 relative z-[70]"
           >
             <MdOutlineClose
               onClick={() => setShowMenu(false)}
