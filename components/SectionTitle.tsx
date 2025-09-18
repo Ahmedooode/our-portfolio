@@ -10,15 +10,16 @@ const SectionTitle = ({ title, titleNo }: Props) => {
 
   return (
     <h2
-      className={`text-2xl font-semibold flex items-center p-2 ${
+      dir={isArabic ? "rtl" : "ltr"}
+      className={`text-3xl font-semibold flex items-center p-2 ${
         isArabic ? "font-arabicFont font-extrabold text-2xl" : "font-titleFont"
       }`}
     >
-      <span className="text-base md:text-lg text-textGreen mr-2">
+      <span className="text-base md:text-lg text-textGreen mr-2 ml-3">
         {titleNo}.
       </span>
       {title}
-      <span className="hidden md:inline-flex md:w-60 lgl:w-72 h-[0.5px] bg-gray-700 ml-6"></span>
+      <span className="hidden md:inline-flex md:w-60 lgl:w-72 h-[0.5px] bg-gray-700 ml-6 mr-6"></span>
     </h2>
   );
 };

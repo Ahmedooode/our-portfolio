@@ -3,6 +3,7 @@ import SectionTitle from "./SectionTitle";
 import { AiFillThunderbolt } from "react-icons/ai";
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
+import { Trans } from "react-i18next";
 
 const About = () => {
   // language HOOKS :
@@ -25,8 +26,10 @@ const About = () => {
         <div className="w-full lgl:w-2/3 text-base text-textDark font-medium flex flex-col gap-4">
           <p>{t("about.paragraph1")}</p>
           <p>
-            {t("about.paragraph2.part1")}{" "}
-            <span className="text-textGreen">{t("about.spanText")}</span>
+            <Trans
+              i18nKey="about.paragraph2"
+              components={{ 1: <span className="text-textGreen" /> }}
+            />
           </p>
 
           <p>{t("about.paragraph3")}</p>

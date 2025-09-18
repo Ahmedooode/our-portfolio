@@ -6,6 +6,9 @@ import Google from "./works/Google";
 import Splash from "./works/Splash";
 import { useState } from "react";
 import React from "react";
+
+import { useTranslation } from "next-i18next";
+
 const components = { A: ReactBD, B: Apple, C: Amazon, D: Google, E: Splash };
 
 const Experience = () => {
@@ -22,12 +25,18 @@ const Experience = () => {
 
   const selectedComponent = work ? components[work] : null;
 
+  // language HOOKS
+  const { t } = useTranslation("common");
+
+  const { i18n } = useTranslation();
+  const isArabic = i18n.language === "ar";
+
   return (
     <section
       id="experience"
       className="max-w-containerXs mx-auto py-10 lgl:py-24 px-4"
     >
-      <SectionTitle title="Where We have worked" titleNo="02" />
+      <SectionTitle title={t("experience.title")} titleNo="02" />
       <div className="w-full mt-10 flex flex-col md:flex-row gap-16">
         <ul className="md:w-32 flex flex-col">
           {workItems.map(({ key, label }) => (

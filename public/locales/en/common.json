@@ -20,8 +20,23 @@
   "about": {
     "sectionTitle": "About Us",
     "paragraph1": "Welcome in our creative space! We are passionate designers and developers dedicated to crafting unique digital experiences. Our team combines innovation, expertise, and attention to detail to help bring your ideas to life.",
-    "paragraph2.part1": "Whether you're a startup, a huge corporation, or an individual with a vision, we are here to collaborate and deliver solutions tailored to your needs.",
-    "spanText": "Let's build something amazing together!",
+    "paragraph2": "Whether you're a startup, a huge corporation, or an individual with a vision, we are here to collaborate and deliver solutions tailored to your needs. <1>Let's build something amazing together!</1>",
+
     "paragraph3": "Here are a few technologies we have been working with recently:"
+  },
+  "experience": {
+    "title": "Where We have worked"
+  },
+  "projects": {
+    "title": "Some Things I have Built",
+    "project1-hint": "Featured Project",
+    "project-1": "buildSmart Company",
+    "buildSmart": "BuildSmart Company specializes in innovative construction, planning, and design solutions. Their team delivers high-quality building projects, integrating modern technology and sustainable practices to ensure efficient project management and exceptional results from concept to completion."
+  },
+  "contact": {
+    "subtitle": "04. What's Next?",
+    "title": "Get In Touch",
+    "description": "I'm currently open to new opportunities and collaborations. If you have a question or just want to say hello, feel free to reach out and I'll get back to you as soon as possible!",
+    "button": "Say Hello"
   }
 }
