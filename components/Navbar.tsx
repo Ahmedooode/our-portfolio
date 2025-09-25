@@ -80,7 +80,7 @@ const Navbar = () => {
         >
           <Link
             href="#home"
-            className="flex items-center m-2 gap-1 text-base md:text-lg font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link "
+            className="flex items-center m-2 gap-1 text-base md:text-lg font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
             onClick={handleScroll}
           >
             <Motion.li

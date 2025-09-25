@@ -25,8 +25,8 @@ module.exports = {
         xl: "1280px",
       },
       fontFamily: {
-        bodyFont: ["Montserrat", "sans-serif"],
-        titleFont: ["Inter", "sans-serif"],
+        titleFont: ["IBM Plex Mono", "monospace"],
+        bodyFont: ["Inter", "sans-serif"],
         arabicFont: ["Mada", "sans-serif"],
       },
       boxShadow: {
