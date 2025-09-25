@@ -27,7 +27,7 @@ const Navbar = () => {
   // EVENT HANDLERS
 
   function handleClick(e: any) {
-    if (e.target.contain(ref.current)) {
+    if (e.target.contains(ref.current)) {
       // do something with myRef.current
       setShowMenu(false);
     }
