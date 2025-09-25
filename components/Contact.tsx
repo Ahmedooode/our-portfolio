@@ -22,9 +22,10 @@ const Contact = () => {
         {t("contact.subtitle")}
       </p>
       <h2
-        className={`${
+        className={`tracking-tighter ${
           isArabic ? "font-arabicFont" : "font-titleFont"
         } text-5xl font-semibold`}
+        style={{ wordSpacing: "-5px" }}
       >
         {t("contact.title")}
       </h2>
