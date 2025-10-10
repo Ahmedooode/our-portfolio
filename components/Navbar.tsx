@@ -1,4 +1,5 @@
-import { logo } from "@/public/assets";
+// import { logo } from "@/public/assets";
+import { profileImg } from "../public/assets";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -64,13 +65,15 @@ const Navbar = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="flex items-center"
+          className="flex items-center justify-center"
         >
-          <Image
-            className="w-14 border border-green-900 rounded-full "
-            src={logo}
-            alt="logo"
-          />
+          <div className="w-16 h-16 flex items-center justify-center rounded-full border-2 border-green-900">
+            <Image
+              className="w-14 h-14 object-cover rounded-full "
+              src={profileImg}
+              alt="logo"
+            />
+          </div>
         </Motion.div>
 
         <ul

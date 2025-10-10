@@ -1,4 +1,4 @@
-import { profileImg } from "@/public/assets";
+import { myImage } from "@/public/assets";
 import SectionTitle from "./SectionTitle";
 import { AiFillThunderbolt } from "react-icons/ai";
 import Image from "next/image";
@@ -90,8 +90,8 @@ const About = () => {
             <div className="w-full h-full relative z-20 flex pl-6 lgl:pl-0">
               <Image
                 className="rounded-lg h-full object-cover"
-                src={profileImg}
-                alt="profileImg"
+                src={myImage}
+                alt="my-image"
               />
               <div className="hidden lgl:inline-block absolute w-full h-80 bg-textGreen/20 rounded-md top-0 left-0 group-hover:bg-transparent duration-300"></div>
             </div>

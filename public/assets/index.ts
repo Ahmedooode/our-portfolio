@@ -5,5 +5,6 @@ import project2 from "./images/lms-app.png";
 import project22 from "./images/lms-app-2.png";
 import buildsmart from "./images/buildsmart.png";
 // import project3 from "./images/project3.png";
+import myImage from "./images/my-image.jpg";
 
-export { logo, profileImg, project22, project2, buildsmart };
+export { logo, profileImg, project22, project2, buildsmart, myImage };
