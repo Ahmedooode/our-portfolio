@@ -32,7 +32,7 @@ const Banner = () => {
         }`}
       >
         {t("banner.title")}{" "}
-        <span className="text-textDark mt-2 lgl:mt-4">
+        <span className="text-textDark mt-2 lgl:mt-4 whitespace-nowrap">
           {t("banner.tagline")}
         </span>
       </Motion.h1>

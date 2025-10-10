@@ -1,11 +1,11 @@
 {
   "banner": {
-    "subtitle": "Welcome to Our Portfolio",
-    "title": "Barq Design.",
-    "tagline": "We create things for you",
-    "description": "We are a team of passionate designers and developers dedicated to crafting exceptional digital experiences. Our portfolio showcases our expertise in web design, development, and user experience.",
-    "learnMore": "Learn More",
-    "cta": "Check out our Projects"
+    "subtitle": "Welcome to My Portfolio",
+    "title": "I'm Ahmed Al-Hussain",
+    "tagline": "Crafting Digital Experiences with Care",
+    "description": "I'm a front-end developer and web designer passionate about building beautiful, functional, and user-friendly websites. I love turning ideas into interactive digital experiences that bring real value to users.",
+    "learnMore": "Learn More About Me",
+    "cta": "Explore My Projects"
   },
   "nav": {
     "home": "Home",
@@ -18,25 +18,24 @@
     "email": "email.me@gmail.com"
   },
   "about": {
-    "sectionTitle": "About Us",
-    "paragraph1": "Welcome in our creative space! We are passionate designers and developers dedicated to crafting unique digital experiences. Our team combines innovation, expertise, and attention to detail to help bring your ideas to life.",
-    "paragraph2": "Whether you're a startup, a huge corporation, or an individual with a vision, we are here to collaborate and deliver solutions tailored to your needs. <1>Let's build something amazing together!</1>",
-
-    "paragraph3": "Here are a few technologies we have been working with recently:"
+    "sectionTitle": "About Me",
+    "paragraph1": "Hi! I'm Ahmed Al-Hussain, a front-end developer and web designer who enjoys creating modern, elegant, and responsive web interfaces. I focus on crafting clean and efficient code while delivering delightful user experiences.",
+    "paragraph2": "I believe every project has a unique story to tell. My goal is to blend creativity and technology to transform ideas into meaningful digital products. <1>Let’s build something awesome together!</1>",
+    "paragraph3": "Here are a few technologies I’ve been working with recently:"
   },
   "experience": {
-    "title": "Where We have worked"
+    "title": "Experience"
   },
   "projects": {
-    "title": "Some Things I have Built",
+    "title": "Some of My Projects",
     "project1-hint": "Featured Project",
-    "project-1": "buildSmart Company",
-    "buildSmart": "BuildSmart Company specializes in innovative construction, planning, and design solutions. Their team delivers high-quality building projects, integrating modern technology and sustainable practices to ensure efficient project management and exceptional results from concept to completion."
+    "project-1": "BuildSmart Company",
+    "buildSmart": "I worked on developing the front-end of BuildSmart’s website — a company specialized in smart construction solutions. The goal was to design a sleek, responsive interface that highlights their services and modern identity with intuitive user experience."
   },
   "contact": {
     "subtitle": "04. What's Next?",
     "title": "Get In Touch",
-    "description": "I'm currently open to new opportunities and collaborations. If you have a question or just want to say hello, feel free to reach out and I'll get back to you as soon as possible!",
-    "button": "Say Hello"
+    "description": "I’m always open to new opportunities, collaborations, or even just a friendly chat. If you have a project or an idea you’d like to discuss, feel free to reach out — I’d love to hear from you!",
+    "button": "Send a Message"
   }
 }
