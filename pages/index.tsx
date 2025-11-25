@@ -39,13 +39,13 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Barq Portfolio</title>
+        <title>Ahmed Portfolio</title>
         <meta
           name="description"
           content="Welcome to my portfolio website showcasing my work and projects."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/logo.ico" />
+        <link rel="icon" href="/logo-2.ico" />
       </Head>
 
       <main className="w-full h-screen font-bodyFont bg-bodyColor text-textLight overflow-x-hidden overflow-y-scroll scrollbar scrollbar-track-text-textDark/20 scrollbar-thumb-textDark/60">

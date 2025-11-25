@@ -19,7 +19,7 @@
   },
   "about": {
     "sectionTitle": "About Me",
-    "paragraph1": "Hi! I'm Ahmed Al-Hussain, a front-end developer and web designer who enjoys creating modern, elegant, and responsive web interfaces. I focus on crafting clean and efficient code while delivering delightful user experiences.",
+    "paragraph1": "Hi! I'm Ahmed Al-Hussain, a full stack developer and web designer who enjoys creating modern, elegant, and responsive web interfaces. I focus on crafting clean and efficient code while delivering delightful user experiences.",
     "paragraph2": "I believe every project has a unique story to tell. My goal is to blend creativity and technology to transform ideas into meaningful digital products. <1>Let’s build something awesome together!</1>",
     "paragraph3": "Here are a few technologies I’ve been working with recently:"
   },
@@ -28,9 +28,22 @@
   },
   "projects": {
     "title": "Some of My Projects",
-    "project1-hint": "Featured Project",
-    "project-1": "BuildSmart Company",
-    "buildSmart": "I worked on developing the front-end of BuildSmart’s website — a company specialized in smart construction solutions. The goal was to design a sleek, responsive interface that highlights their services and modern identity with intuitive user experience."
+    "featured": "Featured Project",
+
+    "lms": {
+      "title": "Learning Management System",
+      "description": "A comprehensive Learning Management System designed for online education. Includes course creation, user management, progress tracking, and interactive learning tools for instructors and students."
+    },
+
+    "buildsmart": {
+      "title": "BuildSmart Company",
+      "description": "I developed the front-end for BuildSmart, a company specialized in smart construction solutions. The goal was to build a clean, modern, and responsive interface that showcases their identity and services."
+    },
+
+    "ecommerce": {
+      "title": "QuickCart E-Commerce",
+      "description": "A complete single-seller e-commerce platform featuring product management, authentication, cart system, checkout flow, and responsive UI — built with modern technologies for a smooth shopping experience."
+    }
   },
   "contact": {
     "subtitle": "04. What's Next?",

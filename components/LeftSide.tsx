@@ -1,10 +1,11 @@
 import { TbBrandGithub } from "react-icons/tb";
 import {
   SlSocialFacebook,
-  SlSocialLinkedin,
+  // SlSocialLinkedin,
   SlSocialYoutube,
+  // SlEnvelope,
 } from "react-icons/sl";
-import { FaLinkedinIn } from "react-icons/fa";
+import { FaLinkedinIn, FaEnvelope } from "react-icons/fa";
 const LeftSide = () => {
   return (
     <div
@@ -22,9 +23,9 @@ const LeftSide = () => {
             <FaLinkedinIn />
           </span>
         </a>
-        <a href="https://www.linkedin.com/in/Ahmedooode" target="_blank">
+        <a href="mailto:ahmedooode@gmail.com" target="_blank">
           <span className="w-10 h-10 text-xl bg-hoverColor rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
-            <SlSocialLinkedin />
+            <FaEnvelope />
           </span>
         </a>
         <a href="https://www.youtube.com/c/Ahmedooode" target="_blank">

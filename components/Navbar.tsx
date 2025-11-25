@@ -16,6 +16,8 @@ import {
 import LocaleSwitcher from "./LocaleSwitcher";
 import { useTranslation } from "next-i18next";
 
+import { createHandleScroll } from "../public/utils/handleScroll";
+
 const Navbar = () => {
   // HOOKS
   const [showMenu, setShowMenu] = useState(false);
@@ -33,23 +35,8 @@ const Navbar = () => {
       setShowMenu(false);
     }
   }
-
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    e.preventDefault();
-    setShowMenu(false);
-    const href = e.currentTarget.href;
-    const targetId = href.replace(/.*\#/, "");
-    const elem = document.getElementById(targetId);
-    elem?.scrollIntoView({
-      behavior: "smooth",
-    });
-    // Update the class name of the clicked link
-    const links = document.querySelectorAll(".nav-link");
-    links.forEach((link) => {
-      link.classList.remove("active");
-    });
-    e.currentTarget.classList.add("active");
-  };
+  // Handle scroll with optional menu state setter
+  const handleScroll = createHandleScroll(setShowMenu);
 
   return (
     <div
@@ -182,7 +169,11 @@ const Navbar = () => {
 
         {/* Right: Resume + LocaleSwitcher */}
         <div className="hidden mdl:flex items-center justify-end gap-4">
-          <a href="/assets/resume.png" target="_blank">
+          <a
+            href="/assets/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Motion.button
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

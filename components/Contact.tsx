@@ -32,7 +32,11 @@ const Contact = () => {
       <p className="max-w-[600px] text-center text-textDark">
         {t("contact.description")}
       </p>
-      <a href="mailto:emailofme@gmail.com">
+      <a
+        href="https://wa.me/201557891747"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <button
           className={`w-40 h-14 border border-textGreen mt-6 text-sm text-textGreen tracking-wider rounded-md hover:bg-hoverColor duration-300 ${
             isArabic ? "font-arabicFont" : "font-titleFont"
