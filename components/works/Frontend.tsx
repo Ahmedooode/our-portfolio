@@ -1,7 +1,9 @@
 import { motion as Motion } from "framer-motion";
 import { TiArrowForward } from "react-icons/ti";
 
-const Splash = () => {
+import React from "react";
+
+const Frontend = () => {
   return (
     <Motion.div
       initial={{ opacity: 0 }}
@@ -10,38 +12,35 @@ const Splash = () => {
       className="w-full"
     >
       <h3 className="flex gap-1 font-medium text-xl font-titleFont">
-        Engineer <span className="text-textGreen tracking-wide">@Barq</span>
+        Wep Developer{" "}
+        <span className="text-textGreen tracking-wide">@Barq</span>
       </h3>
-      <p className="text-sm mt-1 font-medium text-textDark">
-        Jan 2023 - Present
-      </p>
-      <ul className="mt-6 flex flex-col gap-3">
+      <p className="text-sm mt-1 font-medium text-textDark">2020 - 2022</p>
+      <ul className="mt-6 flex flex-col gap-3 text-justify">
         <li className="text-base flex gap-2 text-textDark">
           <span className="text-textGreen mt-1">
             <TiArrowForward />
           </span>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum ab
-          maiores modi distinctio rerum dolores!
+          Worked on multiple front-end projects using HTML, CSS, JavaScript,
+          React, Next.js and UI best practices.
         </li>
         <li className="text-base flex gap-2 text-textDark">
           <span className="text-textGreen mt-1">
             <TiArrowForward />
           </span>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro nihil
-          adipisci impedit quidem dignissimos molestias ad amet incidunt minus
-          repellat!
+          Built responsive interfaces and improved user experience across client
+          and personal projects.
         </li>
         <li className="text-base flex gap-2 text-textDark">
           <span className="text-textGreen mt-1">
             <TiArrowForward />
           </span>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit error
-          earum odio commodi sint officiis? Facere quis error aspernatur harum
-          fuga ducimus facilis nihil fugiat?
+          Collaborated with designers and back-end developers to deliver
+          seamless web applications.
         </li>
       </ul>
     </Motion.div>
   );
 };
 
-export default Splash;
+export default Frontend;

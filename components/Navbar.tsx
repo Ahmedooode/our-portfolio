@@ -1,4 +1,5 @@
-import { logo } from "@/public/assets";
+// import { logo } from "@/public/assets";
+import { profileImg } from "../public/assets";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,6 +15,8 @@ import {
 
 import LocaleSwitcher from "./LocaleSwitcher";
 import { useTranslation } from "next-i18next";
+
+import { createHandleScroll } from "../public/utils/handleScroll";
 
 const Navbar = () => {
   // HOOKS
@@ -32,23 +35,8 @@ const Navbar = () => {
       setShowMenu(false);
     }
   }
-
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    e.preventDefault();
-    setShowMenu(false);
-    const href = e.currentTarget.href;
-    const targetId = href.replace(/.*\#/, "");
-    const elem = document.getElementById(targetId);
-    elem?.scrollIntoView({
-      behavior: "smooth",
-    });
-    // Update the class name of the clicked link
-    const links = document.querySelectorAll(".nav-link");
-    links.forEach((link) => {
-      link.classList.remove("active");
-    });
-    e.currentTarget.classList.add("active");
-  };
+  // Handle scroll with optional menu state setter
+  const handleScroll = createHandleScroll(setShowMenu);
 
   return (
     <div
@@ -64,13 +52,15 @@ const Navbar = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="flex items-center"
+          className="flex items-center justify-center"
         >
-          <Image
-            className="w-14 border border-green-900 rounded-full "
-            src={logo}
-            alt="logo"
-          />
+          <div className="w-16 h-16 flex items-center justify-center rounded-full border-2 border-green-900">
+            <Image
+              className="w-14 h-14 object-cover rounded-full "
+              src={profileImg}
+              alt="logo"
+            />
+          </div>
         </Motion.div>
 
         <ul
@@ -179,7 +169,11 @@ const Navbar = () => {
 
         {/* Right: Resume + LocaleSwitcher */}
         <div className="hidden mdl:flex items-center justify-end gap-4">
-          <a href="/assets/resume.png" target="_blank">
+          <a
+            href="/assets/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Motion.button
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

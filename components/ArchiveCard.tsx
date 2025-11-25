@@ -32,7 +32,7 @@ const ArchiveCard: React.FC<ArchiveCardProps> = ({
           </h2>
           <p className="text-sm mt-3">{description}</p>
         </div>
-        <ul className="text-xs mdl:text-sm text-textDark flex items-center gap-2 justify-between flex-wrap">
+        <ul className="text-xs mdl:text-sm text-textGreen flex items-center gap-2 justify-around flex-wrap">
           {listItems.map((item) => (
             <li key={item.key}>{item.value}</li>
           ))}

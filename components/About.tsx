@@ -1,4 +1,4 @@
-import { profileImg } from "@/public/assets";
+import { profileImg } from "../public/assets";
 import SectionTitle from "./SectionTitle";
 import { AiFillThunderbolt } from "react-icons/ai";
 import Image from "next/image";
@@ -15,7 +15,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className={`max-w-containerSmall mx-auto py-10 lgl:py-32 flex flex-col gap-8 ${
+      className={`max-w-containerSmall mx-auto py-10 lgl:py-32 flex flex-col gap-8 text-justify ${
         isArabic ? "font-arabicFont" : ""
       }`}
     >
@@ -91,7 +91,7 @@ const About = () => {
               <Image
                 className="rounded-lg h-full object-cover"
                 src={profileImg}
-                alt="profileImg"
+                alt="my-profile-picture"
               />
               <div className="hidden lgl:inline-block absolute w-full h-80 bg-textGreen/20 rounded-md top-0 left-0 group-hover:bg-transparent duration-300"></div>
             </div>
