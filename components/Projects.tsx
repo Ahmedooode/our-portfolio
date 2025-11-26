@@ -73,7 +73,7 @@ const Projects = () => {
 
               <a
                 className="hover:text-textGreen duration-300"
-                href="https://lms-system-5zn4hklhq-ahmedooodes-projects.vercel.app/"
+                href="https://lms-system-n7y2je4d3-ahmedooodes-projects.vercel.app/"
                 target="_blank"
               >
                 <RxOpenInNewWindow />
@@ -178,7 +178,6 @@ const Projects = () => {
               <li>Typescript</li>
               <li>Tailwindcss</li>
               <li>MongoDB</li>
-              <li>Vercel</li>
             </ul>
 
             <div className="text-2xl flex gap-4">
