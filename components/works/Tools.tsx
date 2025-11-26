@@ -68,7 +68,10 @@ const Tools = () => {
             <TiArrowForward />
           </span>
           Deployment Platforms:
-          <span className="text-textGreen tracking-wide">Netlify, Vercel.</span>
+          <span className="text-textGreen tracking-wide">
+            {" "}
+            CI/CD at Netlify, Vercel and VPS Hosting.
+          </span>
         </li>
       </ul>
     </Motion.div>

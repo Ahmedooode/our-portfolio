@@ -191,10 +191,6 @@ const Navbar = () => {
         onClick={() => setShowMenu(true)}
         className="absolute right-4 top-6 w-6 h-5 flex flex-col justify-between items-center mdl:hidden text-4xl text-textGreen cursor-pointer overflow-hidden group"
       >
-        {/* <span className="w-full h-[2px] bg-textGreen inline-flex transform group-hover:translate-x-2 transition-all ease-in-out duration-300"></span>
-        <span className="w-full h-[2px] bg-textGreen inline-flex transform translate-x-3 group-hover:translate-x-0 transition-all ease-in-out duration-300"></span>
-        <span className="w-full h-[2px] bg-textGreen inline-flex transform translate-x-1 group-hover:translate-x-3 transition-all ease-in-out duration-300"></span> */}
-
         <span className="w-full h-[2px] bg-textGreen inline-flex transition-all duration-300 ease-in-out group-hover:translate-x-2"></span>
         <span className="w-full h-[2px] bg-textGreen inline-flex transition-all duration-300 ease-in-out translate-x-3 group-hover:translate-x-0"></span>
         <span className="w-full h-[2px] bg-textGreen inline-flex transition-all duration-300 ease-in-out translate-x-1 group-hover:translate-x-3"></span>
@@ -317,7 +313,7 @@ const Navbar = () => {
                   </Motion.li>
                 </Link>
               </ul>
-              <a href="/assets/resume.png" target="_blank">
+              <a href="/assets/resume.pdf" target="_blank">
                 <Motion.button
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -383,7 +379,7 @@ const Navbar = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 1.2, ease: "easeIn" }}
               className="text-sm w-72 tracking-widest text-textGreen text-center mt-4"
-              href="mailto:ahmedemail@gmail.com"
+              href="mailto:ahmedooode@gmail.com"
             >
               <p>{t("nav.email")}</p>
             </Motion.a>
