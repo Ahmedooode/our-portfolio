@@ -11,11 +11,11 @@ const ComputerVision = () => {
     >
       <h3 className="flex gap-1 font-medium text-xl font-titleFont">
         Engineer{" "}
-        <span className="text-textGreen tracking-wide">
+        <span className="text-textGreen tracking-wide text-left ltr">
           @ Omdurman Islamic University (OIU) - Graduation Project
         </span>
       </h3>
-      <p className="text-sm mt-1 font-medium text-textDark">
+      <p className="text-sm mt-1 font-medium text-textDark text-left ltr">
         Jul 2023 - Sep 2024
       </p>
       <ul className="mt-6 flex flex-col gap-3 text-justify">

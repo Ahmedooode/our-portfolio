@@ -48,6 +48,7 @@ const Projects = () => {
 
             <ul className="text-xs md:text-sm font-titleFont tracking-wide flex gap-2 md:gap-5 text-textDark">
               <li>Next.js</li>
+              <li>Express.js</li>
               <li>Typescript</li>
               <li>Tailwindcss</li>
               <li>Prisma</li>
