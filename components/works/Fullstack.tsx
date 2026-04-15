@@ -1,43 +1,52 @@
 import React from "react";
 import { motion as Motion } from "framer-motion";
 import { TiArrowForward } from "react-icons/ti";
+import { useTranslation } from "next-i18next";
 
 const Fullstack = () => {
+  const { t, i18n } = useTranslation("common");
+  const isArabic = i18n.language === "ar";
+
   return (
     <Motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.1 }}
-      className="w-full"
+      className={`w-full ${isArabic ? "font-arabicFont" : ""}`}
     >
-      <h3 className="flex gap-1 font-medium text-xl font-titleFont">
-        Wep Developer{" "}
-        <span className="text-textGreen tracking-wide">@Barq</span>
+      <h3 className="flex flex-wrap gap-1 font-medium text-xl font-titleFont">
+        {t("fullstack.role")}
+        <span className="text-textGreen tracking-wide">
+          {t("fullstack.organization")}
+        </span>
       </h3>
-      <p className="text-sm mt-1 font-medium text-textDark">
-        Jan 2023 - Present
+      <p className="text-sm mt-1 font-medium text-textDark text-start">
+        {t("fullstack.date")}
       </p>
+
       <ul className="mt-6 flex flex-col gap-3 text-justify">
+        {/* Bullet 1 - Role & Company Focus */}
         <li className="text-base flex gap-2 text-textDark">
-          <span className="text-textGreen mt-1">
-            <TiArrowForward />
+          <span className="text-textGreen mt-1 shrink-0">
+            <TiArrowForward className={isArabic ? "rotate-180" : ""} />
           </span>
-          Full Stack Developer with experience in the MERN stack, RESTful API
-          development, SQL and NoSQL databases, and application deployment.
+          {t("fullstack.bullet1")}
         </li>
+
+        {/* Bullet 2 - Technical Systems (EMS/GPS) */}
         <li className="text-base flex gap-2 text-textDark">
-          <span className="text-textGreen mt-1">
-            <TiArrowForward />
+          <span className="text-textGreen mt-1 shrink-0">
+            <TiArrowForward className={isArabic ? "rotate-180" : ""} />
           </span>
-          Familiar with basic system design principles for building scalable and
-          maintainable web applications.
+          {t("fullstack.bullet2")}
         </li>
+
+        {/* Bullet 3 - Scale & Multi-tenancy */}
         <li className="text-base flex gap-2 text-textDark">
-          <span className="text-textGreen mt-1">
-            <TiArrowForward />
+          <span className="text-textGreen mt-1 shrink-0">
+            <TiArrowForward className={isArabic ? "rotate-180" : ""} />
           </span>
-          Strong problem-solving skills and ability to work collaboratively in
-          team environments.
+          {t("fullstack.bullet3")}
         </li>
       </ul>
     </Motion.div>

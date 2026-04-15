@@ -1,57 +1,47 @@
+import React from "react";
 import { motion as Motion } from "framer-motion";
 import { TiArrowForward } from "react-icons/ti";
+import { useTranslation } from "next-i18next";
 
 const SystemDesign = () => {
+  const { t, i18n } = useTranslation("common");
+  const isArabic = i18n.language === "ar";
+
+  // Mapping the bullet keys from common.json
+  const bullets = [
+    "systemDesign.bullet1",
+    "systemDesign.bullet2",
+    "systemDesign.bullet3",
+    "systemDesign.bullet4",
+    "systemDesign.bullet5",
+  ];
+
   return (
     <Motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.1 }}
-      className="w-full"
+      className={`w-full ${isArabic ? "font-arabicFont" : ""}`}
     >
-      <h3 className="flex gap-1 font-medium text-xl font-titleFont">
-        Web Developer{" "}
-        <span className="text-textGreen tracking-wide">@Barq</span>
+      <h3 className="flex flex-wrap gap-1 font-medium text-xl font-titleFont">
+        {t("systemDesign.role")}
+        <span className="text-textGreen tracking-wide">
+          {t("systemDesign.organization")}
+        </span>
       </h3>
-      <p className="text-sm mt-1 font-medium text-textDark">
-        Jan 2024 - Present
+      <p className="text-sm mt-1 font-medium text-textDark text-start">
+        {t("systemDesign.date")}
       </p>
+
       <ul className="mt-6 flex flex-col gap-3 text-justify">
-        <li className="text-base flex gap-2 text-textDark">
-          <span className="text-textGreen mt-1">
-            <TiArrowForward />
-          </span>
-          Designing scalable and maintainable systems, database selection and
-          sizing, server capacity planning (scale-up / scale-out),
-          infrastructure configuration, architectural diagrams, best practices
-          for applying technical tools.
-        </li>
-        <li className="text-base flex gap-2 text-textDark">
-          <span className="text-textGreen mt-1">
-            <TiArrowForward />
-          </span>
-          Diagramming / Architecture Design: diagrams.net (Draw.io)
-        </li>
-        <li className="text-base flex gap-2 text-textDark">
-          <span className="text-textGreen mt-1">
-            <TiArrowForward />
-          </span>
-          Database Design & Sizing: MySQL Workbench, dbdiagram.io, ERDPlus,
-          PostgreSQL Designer.
-        </li>
-        <li className="text-base flex gap-2 text-textDark">
-          <span className="text-textGreen mt-1">
-            <TiArrowForward />
-          </span>
-          Monitoring & Performance Estimation: Prometheus, Grafana, New Relic .
-          (Logs & Metrics)
-        </li>
-        <li className="text-base flex gap-2 text-textDark">
-          <span className="text-textGreen mt-1">
-            <TiArrowForward />
-          </span>
-          Server Capacity Planning (Scale-Up / Scale-Out)
-        </li>
+        {bullets.map((bulletKey, index) => (
+          <li key={index} className="text-base flex gap-2 text-textDark">
+            <span className="text-textGreen mt-1 shrink-0">
+              <TiArrowForward className={isArabic ? "rotate-180" : ""} />
+            </span>
+            {t(bulletKey)}
+          </li>
+        ))}
       </ul>
     </Motion.div>
   );
