@@ -26,6 +26,8 @@ import {
   atmosphere3,
   atmosphere4,
   atmosphere5,
+  alMarid1,
+  alMarid2,
 } from "@/public/assets";
 
 import { AiOutlineYoutube } from "react-icons/ai";
@@ -102,6 +104,7 @@ const Projects = () => {
     atmosphere4,
     atmosphere5,
   ];
+  const alMaridImages = [alMarid1, alMarid2];
   const lmsImages = [lms1, lms2, lms3];
   const buildSmartImages = [
     buildsmart,
@@ -179,8 +182,60 @@ const Projects = () => {
             </div>
           </div>
         </div>
+        {/* Project 2 - Al Ma'rid Cars */}
+        <div className="flex flex-col xl:flex-row-reverse gap-6 w-full relative">
+          <a
+            className="w-full xl:w-7/12 h-[300px] md:h-[450px] relative"
+            href="https://al-marid-cars.vercel.app/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <ProjectImageSlider
+              images={alMaridImages}
+              alt="Al Ma'rid Cars project"
+            />
+          </a>
+          <div
+            className={`w-full xl:w-5/12 flex flex-col gap-6 items-start text-left z-10 ${isArabic ? "xl:-ml-16" : "xl:-mr-16"} mt-4 xl:mt-10`}
+          >
+            <div>
+              <p className="font-titleFont text-textGreen text-sm tracking-wide">
+                {t("projects.featured")}
+              </p>
+              <h3 className="text-2xl font-bold hover:text-textGreen cursor-pointer duration-300">
+                {t("projects.almarid.title")}
+              </h3>
+            </div>
+            <p className="bg-[#112240] text-sm md:text-base p-4 md:p-6 rounded-md shadow-xl text-justify border border-white/5">
+              {t("projects.almarid.description")}
+            </p>
+            <ul className="text-xs md:text-sm font-titleFont tracking-wide flex flex-wrap gap-2 md:gap-5 text-textDark justify-start">
+              <li>Next.js</li>
+              <li>Tailwind</li>
+              <li>Framer Motion</li>
+            </ul>
+            <div className="text-2xl flex gap-4">
+              <a
+                className="hover:text-textGreen duration-300"
+                href="https://github.com/Ahmedooode/al-marid-cars"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <TbBrandGithub />
+              </a>
+              <a
+                className="hover:text-textGreen duration-300"
+                href="https://al-marid-cars.vercel.app/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <RxOpenInNewWindow />
+              </a>
+            </div>
+          </div>
+        </div>
 
-        {/* Project 2 - Atmosphere (Right Image, Left Text) */}
+        {/* Project 3 - Atmosphere (Right Image, Left Text) */}
         <div className="flex flex-col xl:flex-row-reverse gap-6 w-full relative">
           <a
             className="w-full xl:w-7/12 h-[300px] md:h-[450px] relative"
@@ -234,7 +289,7 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* Project 3 - LMS (Left Image, Right Text) */}
+        {/* Project 4 - LMS (Left Image, Right Text) */}
         <div className="flex flex-col xl:flex-row gap-6 w-full relative">
           <a
             className="w-full xl:w-7/12 h-[300px] md:h-[450px] relative"
@@ -285,7 +340,7 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* Project 4 - BuildSmart (Right Image, Left Text) */}
+        {/* Project 5 - BuildSmart (Right Image, Left Text) */}
         <div className="flex flex-col xl:flex-row-reverse gap-6 w-full relative">
           <a
             className="w-full xl:w-7/12 h-[300px] md:h-[450px] relative"
@@ -338,7 +393,7 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* Project 5 - QuickCart (Left Image, Right Text) */}
+        {/* Project 6 - QuickCart (Left Image, Right Text) */}
         <div className="flex flex-col xl:flex-row gap-6 w-full relative">
           <a
             className="w-full xl:w-7/12 h-[300px] md:h-[450px] relative"
