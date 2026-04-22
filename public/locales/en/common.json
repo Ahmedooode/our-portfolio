@@ -65,6 +65,10 @@
       "title": "Atmosphere E-commerce (Salla)",
       "description": "A comprehensive e-commerce platform developed to emulate the Salla store experience, focusing on seamless user journeys and efficient product management. The system features a modern, fully responsive interface with precise data integration to ensure fast and reliable performance for modern online retail needs."
     },
+    "almarid": {
+      "title": "AL-MA'RID Luxury Showroom Project",
+      "description": "A cutting-edge digital platform for showcasing luxury vehicles, featuring a bold Neubrutalism design style. The project focuses on delivering a powerful visual experience that reflects the prestige of the cars, with an interactive UI that allows users to explore detailed technical specs and connects them directly to sales channels via WhatsApp and direct call."
+    },
     "lms": {
       "title": "Learning Management System",
       "description": "A comprehensive Learning Management System designed for online education. Includes course creation, user management, progress tracking, and interactive learning tools for instructors and students."

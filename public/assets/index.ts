@@ -26,6 +26,9 @@ import atmosphere3 from "./images/Atmosphere-03.png";
 import atmosphere4 from "./images/Atmosphere-04.png";
 import atmosphere5 from "./images/Atmosphere-05.png";
 
+import alMarid1 from "./images/al-marid-1.png";
+import alMarid2 from "./images/al-marid-2.png";
+
 // import project3 from "./images/project3.png";
 // import myImage from "./images/my-image.jpg";
 
@@ -56,4 +59,6 @@ export {
   atmosphere3,
   atmosphere4,
   atmosphere5,
+  alMarid1,
+  alMarid2,
 };
